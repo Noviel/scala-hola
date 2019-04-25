@@ -1,5 +1,7 @@
 package example
 
+import util.Properties
+
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.Http.ServerBinding
@@ -17,6 +19,8 @@ object Main extends App {
       complete("pong")
     }
   }
+
+  val port = Properties.envOrElse("PORT", "8080").toInt
 
   val bindingFuture: Future[ServerBinding] = Http().bindAndHandle(routes, "127.0.0.1", 5000)
 }
