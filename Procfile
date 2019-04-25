@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/scala-hello
+web: target/universal/stage/bin/scala-hello -Dhttp.port=$PORT
