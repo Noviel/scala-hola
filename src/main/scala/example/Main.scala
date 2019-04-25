@@ -22,5 +22,5 @@ object Main extends App {
 
   val port = Properties.envOrElse("PORT", "8080").toInt
 
-  val bindingFuture: Future[ServerBinding] = Http().bindAndHandle(routes, "127.0.0.1", 5000)
+  val bindingFuture: Future[ServerBinding] = Http().bindAndHandle(routes, "127.0.0.1", port)
 }
